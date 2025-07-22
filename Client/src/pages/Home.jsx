@@ -6,6 +6,8 @@ import BestSeller from '../components/BestSeller'
 import ProductCard from '../components/ProductCard'
 import { dummyAddress, dummyProducts } from '../assets/greencart_assets/assets'
 import BttomBanner from '../components/BttomBanner'
+import NewsLetter from '../components/NewsLetter'
+
 
 const Home = () => {
   
@@ -18,7 +20,8 @@ const Home = () => {
       <Categories />
       <BestSeller/>
       <BttomBanner/>
-
+      <NewsLetter/>
+     
 
     </div>
   )

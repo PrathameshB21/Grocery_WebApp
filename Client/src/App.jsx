@@ -6,6 +6,7 @@ import Order from './pages/Order.jsx'
 import Navbar from './components/Navbar.jsx'
 import AllProducts from './pages/AllProducts.jsx'
 import {ToastContainer,toast} from 'react-toastify'
+import Footer from './components/Footer.jsx'
 
 const App = () => {
   const isSeller = useLocation().pathname.includes('seller')
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/AllProducts' element={<AllProducts />} />
         </Routes>
       </div>
+      <Footer/>
     </>
   )
 }
