@@ -12,7 +12,7 @@ const BestSeller = () => {
   return (
     <div className='mt-15 mb-15'>
       <p className='text-3xl font-semibold mb-10'>BestSeller</p>
-      <div className='mt-5 grid grid-cols-1 gap-5 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10  xl:grid-cols-6 xl:gap-60  md:gap-15'>
+      <div className='mt-5 grid grid-cols-2 gap-5 md:grid-cols-3 md:gap-5  sm:grid-cols-2 lg:grid-cols-3 lg:gap-5  xl:grid-cols-6 xl:gap-65  '>
         {products.filter((product) => product.inStock).slice(1, 6).map((product, index) => (
 
           <ProductCard  key={index} product={product} />

@@ -7,27 +7,27 @@ const ProductCard = ({product}) => {
         (
             <>
                
-                <div className="border border-gray-500/20 rounded-md  md:px-1 px-3 py-2 bg-white min-w-56 max-w-56 w-full">
-                    <div className="group cursor-pointer flex items-center justify-center px-2">
-                        <img className="group-hover:scale-105 transition max-w-26 md:max-w-30" src={product.image} alt={product.name} />
+                <div className="border border-gray-500/20 rounded-md  lg:px-3 px-3 py-2 md:py-8 bg-white min-w-10 lg:min-w-56 max-w-56 w-full">
+                    <div className="group cursor-pointer flex lg:items-center justify-center px-2">
+                        <img className="group-hover:scale-105 transition max-w-20 lg:max-w-30 " src={product.image} alt={product.name} />
                     </div>
-                    <div className="text-gray-500/60 text-sm">  
+                    <div className="text-gray-500/60 text-xs md:text-sm">  
                         <p>{product.category}</p>
-                        <p className="text-gray-700 font-medium text-lg truncate w-full">{product.name}</p>
-                        <div className="flex items-center gap-0.5">
+                        <p className="text-gray-700 font-medium text-[15px] lg:text-lg truncate w-full">{product.name}</p>
+                        <div className="flex items-center gap-0.2">
                             {Array(5).fill('').map((_, i) => (
                                 <img key={i} src={i < 4 ? assets.star_icon : assets.star_dull_icon} className='w-2 md:w-3' />
                             ))}
 
                             <p>(4)</p>
                         </div>
-                        <div className="flex items-end justify-between mt-3">
-                            <p className="md:text-2xl text-base font-medium text-primary">
+                        <div className="flex flex-col lg:flex-row lg:items-end md:justify-between mt-3">
+                            <p className="text-md md:text-2xl text-base font-medium text-primary">
                                 {currency}{product.offerPrice} <span className="text-gray-500/60 md:text-sm text-xs line-through">{currency}{product.price}</span>
                             </p>
                             <div onClick={(e)=>{e.stopPropagation();}} className="text-primary">
                                 {!cartItems[product._id] ? (
-                                    <button onClick={()=>{addToCart(product._id)}} key={product._id}  className="flex items-center justify-center gap-1 bg-zinc-50 border border-primary-dark md:w-[80px] w-[64px] h-[34px] rounded text-primary font-medium cursor-pointer"  >
+                                    <button onClick={()=>{addToCart(product._id)}} key={product._id}  className="flex items-center justify-center gap-1 bg-zinc-50 border border-primary-dark w-full lg:w-[80px]  h-[34px] rounded text-primary font-medium cursor-pointer"  >
                                         <img src={assets.cart_icon} alt=""  />
                                         Add
                                     </button>

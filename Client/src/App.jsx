@@ -24,7 +24,7 @@ const App = () => {
           <Route path='/AllProducts' element={<AllProducts />} />
         </Routes>
       </div>
-      <Footer/>
+     {isSeller? "": <Footer/>}
     </>
   )
 }
