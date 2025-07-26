@@ -5,11 +5,12 @@ import { useAppContext } from '../context/Context.jsx'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
-  const { user, setUser, navigate, isUserloggedIn, setIsUserLoggedIn } = useAppContext()
+  const { user, setUser, navigate, isUserloggedIn, setIsUserLoggedIn, showUserLogin, setShowUserLogin } = useAppContext()
 
   const logoutHandler = async () => {
     await setUser(false);
-    await setIsUserLoggedIn(false),
+    await setIsUserLoggedIn(false);
+    await setShowUserLogin(false);
       await navigate('/')
   }
   return (
@@ -47,7 +48,7 @@ const Navbar = () => {
               <li onClick={() => logoutHandler()} className='hover:bg-gray-50 w-full rounded-sm cursor-pointer '>Logout</li>
               <li onClick={() => navigate('/orders')} className='hover:bg-gray-50 w-full rounded-sm cursor-pointer '>My Orders</li>
             </ul>
-          </div>) : (<button onClick={() =>setIsUserLoggedIn(true) } className="cursor-pointer px-8 py-2 bg-emerald-500 hover:bg-emerald-600 transition text-white rounded-full" >
+          </div>) : (<button onClick={()=>(setShowUserLogin(true))} className="cursor-pointer px-8 py-2 bg-emerald-500 hover:bg-emerald-600 transition text-white rounded-full" >
             Login
           </button>)}
         </div>

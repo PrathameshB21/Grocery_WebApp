@@ -27,7 +27,7 @@ const Footer = () => {
     </div>
      <div className='text-center border-t border-t-zinc-400 '>
       <p className="py-4 text-center text-sm md:text-base text-gray-500/80">
-                Copyright 2025 © <a href="https://prebuiltui.com">PrebuiltUI</a> All Right Reserved.
+                Copyright {new Date().getFullYear()} © <a onClick={()=>{navigate('/')}} className='cursor-pointer'>GroceryMate</a > All Right Reserved.
             </p>
     </div>
     </div>

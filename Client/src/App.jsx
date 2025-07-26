@@ -5,17 +5,22 @@ import Cart from './pages/Cart.jsx'
 import Order from './pages/Order.jsx'
 import Navbar from './components/Navbar.jsx'
 import AllProducts from './pages/AllProducts.jsx'
-import {ToastContainer,toast} from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import Footer from './components/Footer.jsx'
+import { useAppContext } from './context/Context.jsx'
+import LoginForm from './components/LoginForm.jsx'
 
 const App = () => {
-  const isSeller = useLocation().pathname.includes('seller')
+  const isSeller = useLocation().pathname.includes('seller');
+  const { showUserLogin } = useAppContext()
   return (
     <>
 
-      
-      {isSeller ? " " : <Navbar/>}
-      <ToastContainer/>  
+
+      {isSeller ? " " : <Navbar />}
+
+      {!showUserLogin ?  <LoginForm />:""}
+      <ToastContainer />
       <div className={`${isSeller ? " " : "px-6 md:px-16 lg:px-24 xl:px-32"}`}>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -24,7 +29,7 @@ const App = () => {
           <Route path='/AllProducts' element={<AllProducts />} />
         </Routes>
       </div>
-     {isSeller? "": <Footer/>}
+      {isSeller ? "" : <Footer />}
     </>
   )
 }
