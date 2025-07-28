@@ -17,8 +17,8 @@ const LoginForm = () => {
     }));
   }
   return (
-    <div className='flex items-center justify-center h-100 w-full'>
-      <div className='bg-white shadow-[0_8px_10px_-9px_rgba(0,0,0,3)] flex flex-col items-center p-5 '>
+    <div className='fixed flex z-30 top-0 bottom-0 right-0 left-0 items-center justify-center bg-black/50'>
+      <div className='bg-white shadow-[0_8px_10px_-9px_rgba(0,0,0,3)] flex flex-col items-center p-5 py-10 rounded-2xl '>
         <h2 className='text-2xl font-semibold text-primary-dark'>{isSignUp ? "SignUp" : "Login"}</h2>
         <p className='text-sm'>Please sign-in to continue</p>
         <form className='flex flex-col'>
