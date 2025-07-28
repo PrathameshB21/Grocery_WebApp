@@ -11,7 +11,14 @@ const Navbar = () => {
     await setUser(false);
     await setIsUserLoggedIn(false);
     await setShowUserLogin(false);
-      await navigate('/')
+    await navigate('/')
+  }
+  const loginPopHandler = async () => {
+    if (showUserLogin !== true) {
+      return await setShowUserLogin(true)
+    } else {
+      return await setShowUserLogin(false)
+    }
   }
   return (
     <>
@@ -48,7 +55,7 @@ const Navbar = () => {
               <li onClick={() => logoutHandler()} className='hover:bg-gray-50 w-full rounded-sm cursor-pointer '>Logout</li>
               <li onClick={() => navigate('/orders')} className='hover:bg-gray-50 w-full rounded-sm cursor-pointer '>My Orders</li>
             </ul>
-          </div>) : (<button onClick={()=>(setShowUserLogin(true))} className="cursor-pointer px-8 py-2 bg-emerald-500 hover:bg-emerald-600 transition text-white rounded-full" >
+          </div>) : (<button onClick={loginPopHandler} className="cursor-pointer px-8 py-2 bg-emerald-500 hover:bg-emerald-600 transition text-white rounded-full" >
             Login
           </button>)}
         </div>
